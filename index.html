@@ -2,16 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>ABOUT ME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PT VIP - Premium Access</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* COPY PASTE EXACTLY FROM LOGIN PAGE - NO CHANGES */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -19,33 +17,30 @@
             background-color: #0a0a0a;
             color: #ccc;
             min-height: 100vh;
-            min-height: -webkit-fill-available;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-            overflow-x: hidden;
+            padding: 20px;
         }
 
         .container {
             width: 100%;
-            max-width: 400px;
+            max-width: 500px;
+            margin: 0 auto;
             background-color: #111;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
             border: 1px solid #222;
         }
 
+        /* Video Header */
         .video-container {
             width: 100%;
-            height: 180px;
+            height: 200px;
             position: relative;
             background: #000;
             overflow: hidden;
         }
 
-        #about-video {
+        #main-video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -58,7 +53,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, transparent 50%, rgba(10, 0, 0, 0.7) 100%);
+            background: linear-gradient(to bottom, transparent 40%, rgba(10, 0, 0, 0.8) 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -69,256 +64,582 @@
         }
 
         .logo i {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: #900;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(200, 0, 0, 0.5);
         }
 
         .logo-text {
-            font-size: 1.8rem;
-            letter-spacing: 2px;
+            font-size: 2.2rem;
+            letter-spacing: 3px;
             color: #d00;
-            font-weight: 300;
-            text-shadow: 0 0 10px rgba(200, 0, 0, 0.3);
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(200, 0, 0, 0.7);
         }
 
-        .content-form {
-            padding: 25px 20px;
-        }
-
-        .form-title {
+        /* Product Info */
+        .product-info {
+            padding: 25px;
             text-align: center;
-            margin-bottom: 20px;
+            border-bottom: 1px solid #222;
+        }
+
+        .product-title {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+        }
+
+        .product-subtitle {
             color: #b00;
             font-size: 1.2rem;
-            letter-spacing: 1px;
+            margin-bottom: 15px;
             font-weight: 500;
         }
 
-        .info-box {
-            margin-top: 15px;
-            padding: 12px;
-            background-color: rgba(0, 50, 90, 0.2);
-            border-left: 4px solid #006;
-            border-radius: 6px;
-            color: #8af;
-            font-size: 0.85rem;
-            line-height: 1.4;
+        .price-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #900, #b00);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(180, 0, 0, 0.3);
         }
 
-        .footer {
-            padding: 18px;
+        /* Benefits Section */
+        .benefits-section {
+            padding: 25px;
+        }
+
+        .section-title {
+            color: #b00;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
             text-align: center;
-            background-color: #0d0d0d;
-            border-top: 1px solid #222;
-            color: #666;
-            font-size: 0.75rem;
-            letter-spacing: 0.5px;
-            line-height: 1.4;
-        }
-
-        /* PROFILE ITEMS STYLING - MASIH SAMA STYLE DENGAN LOGIN */
-        .profile-item {
-            background-color: #1a1a1a;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-left: 3px solid #900;
-        }
-
-        .profile-item-title {
-            color: #d00;
-            font-size: 0.95rem;
-            margin-bottom: 8px;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
         }
 
-        .profile-item-content {
-            color: #ccc;
-            font-size: 0.9rem;
-            line-height: 1.5;
+        .benefits-list {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
         }
 
-        .profile-item-content p {
-            margin-bottom: 8px;
+        .benefits-list::-webkit-scrollbar {
+            width: 5px;
         }
 
-        .profile-item-content p:last-child {
+        .benefits-list::-webkit-scrollbar-track {
+            background: #222;
+            border-radius: 10px;
+        }
+
+        .benefits-list::-webkit-scrollbar-thumb {
+            background: #900;
+            border-radius: 10px;
+        }
+
+        .benefit-item {
+            background-color: #1a1a1a;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #900;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+        }
+
+        .benefit-item:hover {
+            background-color: #222;
+            transform: translateX(5px);
+        }
+
+        .benefit-item i {
+            color: #900;
+            font-size: 1.2rem;
+            min-width: 25px;
+        }
+
+        /* Purchase Section */
+        .purchase-section {
+            padding: 25px;
+            background-color: #0d0d0d;
+            border-top: 1px solid #222;
+        }
+
+        .purchase-title {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .purchase-steps {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border: 1px solid #333;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            gap: 12px;
+        }
+
+        .step:last-child {
             margin-bottom: 0;
         }
 
-        /* ANDROID SUPPORT */
-        @media (max-width: 480px) {
-            .video-container { 
-                height: 160px; 
-            }
-            .content-form { 
-                padding: 20px 18px; 
-            }
-            .logo-text { 
-                font-size: 1.6rem; 
-            }
-            .form-title { 
-                font-size: 1.1rem; 
-                margin-bottom: 18px;
-            }
-            .profile-item {
-                padding: 12px;
-            }
+        .step-number {
+            background-color: #900;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
         }
 
-        @media (max-width: 360px) {
-            body {
-                padding: 10px;
-            }
+        .step-text {
+            color: #ddd;
+            line-height: 1.5;
+        }
+
+        .step-text strong {
+            color: #b00;
+        }
+
+        .contact-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background-color: #900;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .contact-btn:hover {
+            background-color: #b00;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(180, 0, 0, 0.4);
+        }
+
+        .contact-btn i {
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #0a0a0a;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .footer strong {
+            color: #b00;
+        }
+
+        /* Audio Player */
+        .audio-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .audio-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #900;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s;
+        }
+
+        .audio-btn:hover {
+            background-color: #b00;
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
             .container {
+                max-width: 100%;
                 border-radius: 10px;
             }
+            
             .video-container {
-                height: 150px;
+                height: 180px;
             }
-            .logo i {
-                font-size: 2.2rem;
-            }
+            
             .logo-text {
+                font-size: 1.8rem;
+            }
+            
+            .price-tag {
+                font-size: 1.5rem;
+                padding: 10px 25px;
+            }
+            
+            .product-title {
                 font-size: 1.5rem;
             }
-        }
-
-        @media (max-height: 700px) {
-            body {
-                align-items: flex-start;
-                padding-top: 10px;
-                padding-bottom: 10px;
+            
+            .audio-controls {
+                bottom: 15px;
+                right: 15px;
             }
-        }
-
-        /* LANDSCAPE SUPPORT */
-        @media (orientation: landscape) and (max-height: 500px) {
-            body {
-                align-items: flex-start;
-                padding: 5px;
-            }
-            .container {
-                max-height: 98vh;
-                overflow-y: auto;
-            }
-            .video-container {
-                height: 140px;
+            
+            .audio-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Video Header -->
         <div class="video-container">
-            <!-- VIDEO SAMA PERSIS DENGAN LOGIN -->
-            <video id="about-video" autoplay muted loop playsinline>
+            <video id="main-video" autoplay muted loop playsinline>
                 <source src="https://files.catbox.moe/rf9b8t.mp4" type="video/mp4">
+                Your browser does not support the video tag.
             </video>
             <div class="video-overlay">
                 <div class="logo">
-                    <i class="fas fa-user"></i>
-                    <div class="logo-text">ABOUT ME</div>
+                    <i class="fas fa-crown"></i>
+                    <div class="logo-text">PT VIP</div>
                 </div>
             </div>
         </div>
 
-        <div class="content-form">
-            <h2 class="form-title">PERSONAL PROFILE</h2>
+        <!-- Product Information -->
+        <div class="product-info">
+            <h1 class="product-title">PREMIUM ACCESS PACKAGE</h1>
+            <div class="product-subtitle">Unlock All Exclusive Tools & Scripts</div>
+            <div class="price-tag">Rp 5.000</div>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="benefits-section">
+            <h2 class="section-title">
+                <i class="fas fa-gift"></i> WHAT YOU GET
+            </h2>
+            <div class="benefits-list">
+                <!-- Benefits will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Purchase Section -->
+        <div class="purchase-section">
+            <h2 class="purchase-title">HOW TO PURCHASE</h2>
             
-            <div class="profile-item">
-                <div class="profile-item-title">
-                    <i class="fas fa-id-card"></i> IDENTITAS
+            <div class="purchase-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Transfer <strong>Rp 5.000</strong> to seller's account</div>
                 </div>
-                <div class="profile-item-content">
-                    <p><strong>Nama:</strong>Fathan</p>
-                    <p><strong>Pekerjaan:</strong>Designer, Ceo Ai Worm, Bot MD, Apk Bug</p>
-                    <p><strong>Lokasi:</strong> Jakarta, Indonesia</p>
-                    <p><strong>Pengalaman:</strong> 4+ Tahun</p>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Save your payment proof (screenshot)</div>
                 </div>
-            </div>
-
-            <div class="profile-item">
-                <div class="profile-item-title">
-                    <i class="fas fa-code"></i> SKILLS
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Contact <strong>@whocarebroidk</strong> on Telegram with your payment proof</div>
                 </div>
-                <div class="profile-item-content">
-                    <p><strong>Tools:</strong>Replit, Termux, Kali Linux, Arch linux</p>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">You will receive all PT VIP files after verification</div>
                 </div>
             </div>
 
-            <div class="info-box">
-                <i class="fas fa-info-circle"></i>
-                Audio background sedang diputar otomatis. Mohon Tunggu.
-            </div>
+            <a href="https://t.me/whocarebroidk" target="_blank" class="contact-btn">
+                <i class="fab fa-telegram"></i> CONTACT TO BUY
+            </a>
         </div>
 
+        <!-- Footer -->
         <div class="footer">
-            <div>© 2023 Personal Profile</div>
-            <div style="color:#900; margin-top:5px; opacity:0.7; font-size:0.7rem;">
-                Same exact design as RED ACCESS • Optimized for Android
-            </div>
+            <div><strong>PT VIP ACCESS</strong> - Premium Tools & Scripts Collection</div>
+            <div style="margin-top: 10px; color: #900; opacity: 0.8;">For Educational Purposes Only</div>
+            <div style="margin-top: 5px; font-size: 0.75rem;">Contact: @whocarebroidk on Telegram</div>
         </div>
     </div>
 
-    <!-- AUDIO ELEMENT - AUTO PLAY TANPA TOMBOL -->
-    <audio id="bgAudio" autoplay loop>
-        <!-- EXAMPLE AUDIO URL -->
-        <source src="https://files.catbox.moe/pe0lkl.mp3" type="audio/mpeg">
-        <!-- BACKUP AUDIO URL -->
-        <source src="https://files.catbox.moe/pe0lkl.mp3" type="audio/mpeg">
+    <!-- Audio Controls -->
+    <div class="audio-controls">
+        <button id="audio-toggle" class="audio-btn">
+            <i class="fas fa-volume-up"></i>
+        </button>
+    </div>
+
+    <!-- Audio Background -->
+    <audio id="background-audio" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
 
     <script>
-        // VIDEO AUTOPLAY SAMA PERSIS DENGAN LOGIN
-        const video = document.getElementById('about-video');
-        const playVideo = video.play();
-        if (playVideo !== undefined) {
-            playVideo.catch(error => {
-                // Video autoplay prevented, continue tanpa error
-            });
-        }
-        
-        // AUDIO AUTOPLAY - NO BUTTONS, AUTO PLAY
-        const audio = document.getElementById('bgAudio');
-        
-        // Auto play audio - langsung play
-        document.addEventListener('DOMContentLoaded', function() {
-            // Play audio langsung
-            const playAudio = audio.play();
-            if (playAudio !== undefined) {
-                playAudio.catch(error => {
-                    // Jika browser block autoplay, play setelah user klik
-                    document.body.addEventListener('click', function playAudioOnClick() {
-                        audio.play();
-                    }, { once: true });
+        // List of benefits (products included)
+        const benefits = [
+            "SIWA INVICITUS V1.zip",
+            "VOLTAGE_DEATH_V4_GEN_3_ENC.zip",
+            "One Pice V7 🎄.zip",
+            "SyndraVoid (free).zip",
+            "Apophis V8 New Version.zip",
+            "Oktagram V3 Enc.zip",
+            "ZeroTrace V6 ENC.zip",
+            "友友创建_MORTAL_KOMBACK_友友创",
+            "KODOK RANGGERS V1 NO ENC.zip",
+            "PHANTOM WHATSAAP.zip",
+            "Apollo Cursed V29.0 [FREE].zip",
+            "Furina_Infinity_Version_2_0_0_Wip_buy_online",
+            "Revengers Crasher V3 (Free)(2).zip",
+            "VILOXE DEATH V13 FREE.zip",
+            "TEXXAS FREE VERSION V2.zip",
+            "GOVIL_DEATH_V1_FREE.zip",
+            "Phantom V2 Via (WhatsApp).zip",
+            "29XORA_COLAB_BUG_BY_MAIL_X_NANA_FREE",
+            "Setto Official V1.0.0 Free Version!!.zip",
+            "SCRIPT BUGXXXTENTACION VIP (1).zip",
+            "DELTA INFINITY-1.zip",
+            "TWENTYNINE INFINITY V1(1).zip",
+            "SETODOMINION NEW.zip",
+            "BlackHoleCrasher V4 Shadow Arc.zip",
+            "ONE PICE V10.zip",
+            "Evil v3.zip",
+            "XWORM - XX [V2.0].zip",
+            "Script Xray Death V1.zip",
+            "ELMINATOR V8 GEN 2 FREE.zip",
+            "SA-asystenFreeEnc.zip",
+            "Osiris Engine (Free).zip",
+            "Hamada V9.zip",
+            "BlackHoleCrasher V5 Luffy Infinity Arc.zip",
+            "DARK CRASH V7.zip",
+            "Legacy V1 [Vip].zip",
+            "apineww.zip",
+            "apk bug.zip",
+            "API ONLY 1 SENDER.zip",
+            "API BUG TELEGRAM.zip",
+            "API BUG MULTISENDER.zip",
+            "BASE SC KECE.zip",
+            "Apollo Cursed V8.0 (1).zip",
+            "Apollo Cursed V8.0.zip",
+            "DOC-20250830-WA0195.zip",
+            "DOC-20250830-WA0153.zip",
+            "DOC-20250830-WA0128.zip",
+            "SC INSTAL PANEL BY @OBITOBOYS (1).zip",
+            "Sc Free Otax.zip",
+            "Sc entah.zip",
+            "X_ZOMBIE_BLOOD_VERSION_50_ENCRYF",
+            "Base Kaido{1}.zip",
+            "PROTECT FIX V2.zip",
+            "ZYJASHER_V1_5_NO_ENC.zip",
+            "VIPERZX_CRASH_V2_ENC.zip",
+            "SANZXBOTV2 [buyer] (3).zip",
+            "VincentSuZo_NoEnc.zip",
+            "SCORPION++V2+by+@diana+.zip",
+            "『DIANA$STORE_』.zip",
+            "Solo+Leveling.zip",
+            "SYSTEM_CRASH_1_0_BUYYER_.zip",
+            "RiszOfficial_X_jisher_v2_0_2.zip",
+            "Cpanel_By_Angga_Official.zip",
+            "SC api Yoshi.zip",
+            "ELAINA - MD.zip",
+            "ENC ZOMBIE AREA 3.0.zip",
+            "Eternal Zeno No Enc.zip",
+            "Eternal Zeno No Enc (1).zip",
+            "FILE BADAK HARGA 10K VVIP SHARE BY DOH",
+            "FHISING_VIA_TELE.zip",
+            "Fix Eternal Vip New No Enc.zip",
+            "fluxo.zip",
+            "fix.zip",
+            "func 900k.zip",
+            "phsing (2).zip",
+            "Primous Calix v2.0 [FIXX].zip",
+            "prank-hack.html",
+            "Pushkontak.zip",
+            "rename sc cpanel for fanzzx 2.zip",
+            "Repo 155 Module VIP Wafa (1) (1).zip",
+            "REST_API_V1_MAIN.zip",
+            "RiszObf(Copy).zip",
+            "riszzcrashed v8.zip",
+            "CELLO CPANEL 2 SRV.zip",
+            "SC FIX MERAH.zip",
+            "NAERI V5 (NODE 20).zip",
+            "Miyako V5 Fix.zip",
+            "SC AUTO ORDER.zip",
+            "JASHER_SAM_GANTENG_NEW_BUYER.zip",
+            "Miyako V4 Fix By Gw.zip",
+            "Sc Crate sc.zip",
+            "God Of War Sanzyy.zip",
+            "Sc Order Nokos.zip",
+            "Base_Bug_Paizy.zip",
+            "MIKASA V10 DEL DB.zip",
+            "Bot gacha new.zip",
+            "Base KyzzXpwnn.zip",
+            "BOT RASUK VIA TELE (NO ENC) (1).zip",
+            "REPO USERBOT 212MODULE.zip",
+            "pushkontak-saveotomatis.zip",
+            "NOROI INVICTUS V5.0 (BUYER).zip",
+            "VAMPIR V10.0 Pro (CRACK.zip",
+            "Otax Lite V1 gen 1.zip",
+            "V5 PROJECT.zip",
+            "zyura v4.zip",
+            "Cpanel Naeri [Crack].zip",
+            "Gacha - buyer.zip",
+            "IndictiveCore V4 Pro+ (Beta).zip",
+            "yoshimitsu.zip",
+            "cursed.zip",
+            "SiX 66.7z",
+            "Miyako V2.0.zip",
+            "Base ObsidianCorex V3.5.1 Beta.zip",
+            "obsidian v2.zip",
+            "DrakVerse.zip",
+            "DEMON RED.zip",
+            "Fulsar.zip",
+            "BOT MD VIA TELEGRAM.zip",
+            "Cpanel Bryan Enc.zip",
+            "CPANEL DEWA INVICTUS.zip",
+            "Cpanel Rimu.zip",
+            "JustinV21 NO ENC.zip",
+            "UPPS BASE NEW TERBARU NIH.zip",
+            "SCRIPT_OBF.zip",
+            "AUTO REPORT.zip",
+            "SC CEK BIO WA.zip",
+            "!FREE OVER GLITCH.zip",
+            "BAND_CH_TELE.txt",
+            "CVPS-LH777.zip",
+            "FUNCTION BY ANGKASA 8.js",
+            "source web top up.zip",
+            "REACT SCRIPT.zip",
+            "APK SPAM OTP WA ○ SG4NNZ.zip",
+            "ALL MT BAN WHATSAPP(Copy).zip",
+            "ALWAYS GACHA V2.zip",
+            "ALL TOOLS FITUR ANGKASA.zip",
+            "Alight motion.zip",
+            "Dark invictuse.zip",
+            "SETTO OFFICIALVIP.zip",
+            "Tredict Invictus [Free].zip",
+            "Tenjiku Crasher V7 [BUY ONLY+FIX BAIL+NEV]",
+            "Mit@execute 6.0 KING NO ENC.zip",
+            "XVR-A-T-C-K (Base V2).zip",
+            "BASE APK DEMONIXX.zip",
+            "api.zip",
+            "Night Raid (Base Apps).zip",
+            "QuantumX (App Base).zip",
+            "Script api.zip",
+            "Twilight (Base Apps) (2).zip",
+            "api bool.zip",
+            "bool (1).zip",
+            "nexus.zip"
+        ];
+
+        // Populate benefits list
+        const benefitsList = document.querySelector('.benefits-list');
+        benefits.forEach(benefit => {
+            const item = document.createElement('div');
+            item.className = 'benefit-item';
+            item.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <span>${benefit}</span>
+            `;
+            benefitsList.appendChild(item);
+        });
+
+        // Video autoplay
+        const video = document.getElementById('main-video');
+        video.play().catch(e => console.log("Autoplay prevented:", e));
+
+        // Audio controls
+        const audio = document.getElementById('background-audio');
+        const audioToggle = document.getElementById('audio-toggle');
+        let audioPlaying = false;
+
+        // Try to play audio with user interaction
+        audioToggle.addEventListener('click', () => {
+            if (!audioPlaying) {
+                audio.play().then(() => {
+                    audioPlaying = true;
+                    audioToggle.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                }).catch(e => {
+                    console.log("Audio play failed:", e);
+                    alert("Please interact with the page first to enable audio");
                 });
+            } else {
+                audio.pause();
+                audioPlaying = false;
+                audioToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
             }
         });
-        
-        // ANDROID TOUCH SUPPORT
-        document.addEventListener('touchstart', function() {}, {passive: true});
-        
-        // Handle resize untuk Android
-        window.addEventListener('resize', function() {
-            document.body.style.minHeight = window.innerHeight + 'px';
-        });
-        
-        // Set initial height
-        document.body.style.minHeight = window.innerHeight + 'px';
-        
-        // Mencegah zoom double tap
-        let lastTouchEnd = 0;
-        document.addEventListener('touchend', function(event) {
-            const now = Date.now();
-            if (now - lastTouchEnd <= 300) {
-                event.preventDefault();
+
+        // Auto-start audio on user interaction with page
+        document.addEventListener('click', function initAudio() {
+            if (!audioPlaying) {
+                audio.play().then(() => {
+                    audioPlaying = true;
+                    audioToggle.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                }).catch(e => console.log("Audio auto-play failed"));
             }
-            lastTouchEnd = now;
-        }, false);
+            document.removeEventListener('click', initAudio);
+        });
+
+        // Add animation for benefit items on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply initial styles and observe
+        document.querySelectorAll('.benefit-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-20px)';
+            item.style.transition = `opacity 0.5s ease ${index * 0.05}s, transform 0.5s ease ${index * 0.05}s`;
+            observer.observe(item);
+        });
     </script>
 </body>
 </html>
